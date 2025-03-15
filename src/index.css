@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Dark Mode Styles */
+.dark .mermaid {
+  background: transparent !important;
+}
+
+.dark .mermaid .node rect,
+.dark .mermaid .node circle,
+.dark .mermaid .node ellipse,
+.dark .mermaid .node polygon,
+.dark .mermaid .node path {
+  fill: #374151 !important;
+  stroke: #4b5563 !important;
+}
+
+.dark .mermaid .node text {
+  fill: #e5e7eb !important;
+}
+
+.dark .mermaid .edgePath .path {
+  stroke: #6b7280 !important;
+}
+
+.dark .mermaid .arrowheadPath {
+  fill: #6b7280 !important;
+  stroke: #6b7280 !important;
+}
+
+.dark .mermaid .edgeLabel {
+  background-color: #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+/* Light Mode Styles */
+.mermaid {
+  background: transparent !important;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+  fill: #f3f4f6 !important;
+  stroke: #d1d5db !important;
+}
+
+.mermaid .node text {
+  fill: #1f2937 !important;
+}
+
+.mermaid .edgePath .path {
+  stroke: #6b7280 !important;
+}
+
+.mermaid .arrowheadPath {
+  fill: #6b7280 !important;
+  stroke: #6b7280 !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: #f9fafb !important;
+  color: #1f2937 !important;
+}
+
+/* Edge styles for both themes */
+.mermaid .edge {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mermaid .edge:hover {
+  opacity: 0.7;
+}
+
+.mermaid .edgePath {
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+.mermaid .edgePath:hover {
+  opacity: 0.7;
+}
+
+.mermaid .edgeLabel {
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+.mermaid .edgeLabel:hover {
+  opacity: 0.7;
+}
+
+.mermaid g.edgeLabel {
+  pointer-events: all !important;
+}
+
+/* Additional edge interaction styles */
+.edge-overlay {
+  transition: all 200ms ease-in-out;
+  cursor: pointer !important;
+}
+
+.edge-overlay:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+#mermaid-diagram .edge {
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+#mermaid-diagram .edge:hover {
+  opacity: 0.7;
+}
+
+#mermaid-diagram .edgePath {
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+#mermaid-diagram .edgePath:hover {
+  opacity: 0.7;
+}
+
+#mermaid-diagram .edgeLabel {
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+#mermaid-diagram .edgeLabel:hover {
+  opacity: 0.7;
+}
+
+#mermaid-diagram g.edgeLabel {
+  pointer-events: all !important;
+}
+
+/* Edge path and label transitions */
+.mermaid .edge-path {
+  transition: all 0.2s ease !important;
+}
+
+.mermaid .edge-label {
+  transition: all 0.2s ease !important;
+}
+
+/* Selected edge styles */
+.selected-edge .edge-path {
+  filter: drop-shadow(0 0 3px rgba(59, 130, 246, 0.5)) !important;
+}
+
+.selected-edge .edge-label {
+  filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.5)) !important;
+}
+
+/* Dark mode toggle adjustments */
+.dark #mermaid-diagram .node rect,
+.dark #mermaid-diagram .node circle,
+.dark #mermaid-diagram .node ellipse,
+.dark #mermaid-diagram .node polygon,
+.dark #mermaid-diagram .node path {
+  fill: #374151 !important;
+  stroke: #4b5563 !important;
+}
+
+.dark #mermaid-diagram .edgePath .path {
+  stroke: #6b7280 !important;
+}
+
+.dark #mermaid-diagram .node text {
+  fill: #e5e7eb !important;
+}
+
+/* Add Tailwind dark mode class definition */
+.dark {
+  color-scheme: dark;
+}
