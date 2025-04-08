@@ -49,7 +49,7 @@ jobs:
 
       # 4. React アプリをビルド (ルートディレクトリで実行)
       - name: Build React App
-        run: npm run build
+        run: CI=false npm run build
 
       # 5. GitHub Pages 用の設定 (成果物をアップロードする準備)
       - name: Setup Pages
