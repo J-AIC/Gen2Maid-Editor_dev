@@ -1,0 +1,68 @@
+# .github/workflows/deploy.yml
+
+name: Deploy React App to GitHub Pages
+
+# ワークフローがトリガーされるイベントを定義
+on:
+  # main ブランチに push された時に実行
+  push:
+    branches: [ "main" ] # デフォルトブランチ名
+  # GitHub の Actions タブから手動で実行することも可能にする
+  workflow_dispatch:
+
+# ワークフロー全体の権限設定
+permissions:
+  contents: read  # リポジトリのコンテンツを読み取る権限
+  pages: write   # GitHub Pages にデプロイする権限
+  id-token: write # OIDC トークンを発行する権限 (Actions から Pages への認証に必要)
+
+# 実行するジョブを定義
+jobs:
+  deploy:
+    # ジョブが実行される環境
+    runs-on: ubuntu-latest
+
+    # GitHub Pages のデプロイ設定
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # デプロイ完了時に Pages の URL を出力
+
+    # ジョブのステップを定義
+    steps:
+      # 1. リポジトリのコードをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Node.js 環境をセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # プロジェクトで使用している Node.js のバージョンを指定
+          node-version: '20'
+          cache: 'npm' # 依存関係のキャッシュを有効化
+          # package-lock.json の場所を指定 (ルートディレクトリ)
+          cache-dependency-path: package-lock.json
+
+      # 3. 依存関係をインストール (ルートディレクトリで実行)
+      - name: Install dependencies
+        run: npm install
+
+      # 4. React アプリをビルド (ルートディレクトリで実行)
+      - name: Build React App
+        run: npm run build
+
+      # 5. GitHub Pages 用の設定 (成果物をアップロードする準備)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 6. ビルド成果物を GitHub Pages 用の artifact としてアップロード
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # ビルド出力フォルダへのパスを指定 (ルートの 'build')
+          path: './build'
+
+      # 7. GitHub Pages にデプロイ
+      - name: Deploy to GitHub Pages
+        id: deployment # このステップに ID を付け、URL を出力できるようにする
+        uses: actions/deploy-pages@v4 
