@@ -42,7 +42,7 @@ A Powerful, user-friendly web application for creating and editing Mermaid diagr
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/J-AIC_git_account/mermaid-editor.git
+git clone https://github.com/J-AIC_git_account/Gen2Maid Editor.git
 cd mermaid-editor
 ```
 
