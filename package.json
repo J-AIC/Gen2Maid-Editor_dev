@@ -2,7 +2,7 @@
   "name": "mermaid-editor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.io/J-AIC/Gen2Maid-Editor_dev/",
+  "homepage": "https://j-aic.github.io/Gen2Maid-Editor_dev/",
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
