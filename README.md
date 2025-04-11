@@ -1,6 +1,6 @@
 # Gen2Maid Editor
 
-A Powerful, user-friendly web application for creating and editing Mermaid diagrams with a visual interface. This project combines the flexibilty of Mermaid's text-based diagram syntax with an intuitive drag-and-drop interface, making diagram creation accessible to both techinacl and non=technical users. Demo page is [here](https://j-aic.github.io/mermaid_graphical_editor_dev/).
+A Powerful, user-friendly web application for creating and editing Mermaid diagrams with a visual interface. This project combines the flexibilty of Mermaid's text-based diagram syntax with an intuitive drag-and-drop interface, making diagram creation accessible to both techinacl and non=technical users. Demo page is [here](https://j-aic.github.io/Gen2Maid-Editor_dev/).
 
 ## Features 
 
